@@ -1,0 +1,28 @@
+{
+    "name": "thinframe/inotify",
+    "type": "library",
+    "homepage": "http://thinframe.net",
+    "description": "Inotify module for ThinFrame",
+    "keywords": ["thinframe", "inotify", "file watcher"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sorin Badea",
+            "email": "sorin.badea91@gmail.com",
+            "homepage": "http://sorinbadea.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "thinframe/foundation": "dev-master",
+        "thinframe/events": "dev-master",
+        "thinframe/applications": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}

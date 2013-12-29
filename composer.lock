@@ -1,0 +1,528 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "5ee231b46ba37c7c801e99eb37a7828b",
+    "packages": [
+        {
+            "name": "danielstjules/stringy",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/danielstjules/Stringy.git",
+                "reference": "6ba29637b2b2bc8cfd735539c6f9716ae8957477"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/6ba29637b2b2bc8cfd735539c6f9716ae8957477",
+                "reference": "6ba29637b2b2bc8cfd735539c6f9716ae8957477",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Stringy": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel St. Jules",
+                    "email": "danielst.jules@gmail.com",
+                    "homepage": "http://www.danielstjules.com"
+                }
+            ],
+            "description": "A string manipulation library with multibyte support",
+            "homepage": "https://github.com/danielstjules/Stringy",
+            "keywords": [
+                "UTF",
+                "helpers",
+                "manipulation",
+                "methods",
+                "multibyte",
+                "string",
+                "utf-8",
+                "utility",
+                "utils"
+            ],
+            "time": "2013-12-05 04:36:17"
+        },
+        {
+            "name": "phpcollection/phpcollection",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-collection.git",
+                "reference": "dbec93115a5ff149b476ee2d4ede3880239a3d77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/dbec93115a5ff149b476ee2d4ede3880239a3d77",
+                "reference": "dbec93115a5ff149b476ee2d4ede3880239a3d77",
+                "shasum": ""
+            },
+            "require": {
+                "phpoption/phpoption": "1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpCollection": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "General-Purpose Collection Library for PHP",
+            "keywords": [
+                "collection",
+                "list",
+                "map",
+                "sequence",
+                "set"
+            ],
+            "time": "2013-12-13 09:27:51"
+        },
+        {
+            "name": "phpoption/phpoption",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "a807c38edb33c1c527ac0df51c256909f62aa764"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/a807c38edb33c1c527ac0df51c256909f62aa764",
+                "reference": "a807c38edb33c1c527ac0df51c256909f62aa764",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpOption\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "time": "2013-12-22 19:01:07"
+        },
+        {
+            "name": "symfony/config",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config.git",
+                "reference": "d14e3e3ff200bf148e7e616c82383a59ed5ded40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/d14e3e3ff200bf148e7e616c82383a59ed5ded40",
+                "reference": "d14e3e3ff200bf148e7e616c82383a59ed5ded40",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-12-26 07:59:17"
+        },
+        {
+            "name": "symfony/dependency-injection",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/DependencyInjection",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/DependencyInjection.git",
+                "reference": "d9d479a6bef711fe8e2c8cce71eadd3f839c7fa6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/d9d479a6bef711fe8e2c8cce71eadd3f839c7fa6",
+                "reference": "d9d479a6bef711fe8e2c8cce71eadd3f839c7fa6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/config": "~2.2",
+                "symfony/expression-language": "~2.4",
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-12-28 08:12:58"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Filesystem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Filesystem.git",
+                "reference": "f316a10af34320e04bb649a611de370635385a63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/f316a10af34320e04bb649a611de370635385a63",
+                "reference": "f316a10af34320e04bb649a611de370635385a63",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-12-28 08:12:58"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "c2e065720708d6db30dfba1278b8f53c45dd9fe0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/c2e065720708d6db30dfba1278b8f53c45dd9fe0",
+                "reference": "c2e065720708d6db30dfba1278b8f53c45dd9fe0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-12-28 08:12:58"
+        },
+        {
+            "name": "thinframe/applications",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thinframe/applications.git",
+                "reference": "2a32c18c2525c3dcbe3a6580531f67925bbb949c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thinframe/applications/zipball/2a32c18c2525c3dcbe3a6580531f67925bbb949c",
+                "reference": "2a32c18c2525c3dcbe3a6580531f67925bbb949c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "symfony/config": "dev-master",
+                "symfony/dependency-injection": "dev-master",
+                "symfony/yaml": "dev-master",
+                "thinframe/foundation": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sorin Badea",
+                    "email": "sorin.badea91@gmail.com",
+                    "homepage": "http://sorinbadea.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP applications ecosystem",
+            "homepage": "http://thinframe.net",
+            "keywords": [
+                "Applications",
+                "ecosystem",
+                "thinframe"
+            ],
+            "time": "2013-12-27 12:09:35"
+        },
+        {
+            "name": "thinframe/events",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thinframe/events.git",
+                "reference": "1a24bfa2932216d1e06df1f0bbc70887a2e4690b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thinframe/events/zipball/1a24bfa2932216d1e06df1f0bbc70887a2e4690b",
+                "reference": "1a24bfa2932216d1e06df1f0bbc70887a2e4690b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "thinframe/foundation": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "thinframe/applications": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sorin Badea",
+                    "email": "sorin.badea91@gmail.com",
+                    "homepage": "http://sorinbadea.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Powerful events system.",
+            "homepage": "http://thinframe.net",
+            "keywords": [
+                "events",
+                "thinframe"
+            ],
+            "time": "2013-12-10 20:57:33"
+        },
+        {
+            "name": "thinframe/foundation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thinframe/foundation.git",
+                "reference": "93e6785c18138c6b26c0466667ae3989b86e02e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thinframe/foundation/zipball/93e6785c18138c6b26c0466667ae3989b86e02e4",
+                "reference": "93e6785c18138c6b26c0466667ae3989b86e02e4",
+                "shasum": ""
+            },
+            "require": {
+                "danielstjules/stringy": "1.2.*",
+                "php": ">=5.4.0",
+                "phpcollection/phpcollection": "0.3.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sorin Badea",
+                    "email": "sorin.badea91@gmail.com",
+                    "homepage": "http://sorinbadea.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of classes that make the foundation of all ThinFrame components",
+            "homepage": "http://thinframe.net",
+            "keywords": [
+                "foundation",
+                "thinframe"
+            ],
+            "time": "2013-12-27 01:42:20"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "thinframe/foundation": 20,
+        "thinframe/events": 20,
+        "thinframe/applications": 20
+    },
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": [
+
+    ]
+}

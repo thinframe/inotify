@@ -1,0 +1,3 @@
+services:
+    thinframe.inotify.file_system_watcher:
+        class: 'ThinFrame\Inotify\FileSystemWatcher'
