@@ -15,14 +15,15 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "ext-inotify": "@stable",
         "thinframe/foundation": "dev-master",
         "thinframe/events": "dev-master",
         "thinframe/applications": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "ThinFrame\\Inotify\\": "src/"
         }
     }
 }

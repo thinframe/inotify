@@ -1,7 +1,7 @@
 <?php
 
 /**
- * /src/ThinFrame/Inotify/FileSystemWatcher.php
+ * /src/FileSystemWatcher.php
  *
  * @copyright 2013 Sorin Badea <sorin.badea91@gmail.com>
  * @license   MIT license (see the license file in the root directory)
@@ -120,6 +120,7 @@ class FileSystemWatcher implements DispatcherAwareInterface
         if (realpath($path)) {
             $this->excluded[] = realpath($path);
         }
+
         return $this;
     }
 
