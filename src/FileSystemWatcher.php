@@ -90,12 +90,15 @@ class FileSystemWatcher implements DispatcherAwareInterface
         if (is_dir($path) && $recursive) {
             $children = scandir($path);
             foreach ($children as $child) {
-                if ($child != '.' && $child != '..' && is_dir($path . DIRECTORY_SEPARATOR . $child)) {
+                if ($child != '.' && $child != '..' && $child != '.git' && is_dir(
+                        $path . DIRECTORY_SEPARATOR . $child
+                    )
+                ) {
                     $this->addPath($path . DIRECTORY_SEPARATOR . $child, $mode, $recursive);
                 }
             }
         }
-        $watchDescriptor                          = inotify_add_watch($this->inotifyStreamDescriptor, $path, $mode);
+        $watchDescriptor = inotify_add_watch($this->inotifyStreamDescriptor, $path, $mode);
         $this->watchDescriptors[$watchDescriptor] = $path;
     }
 
