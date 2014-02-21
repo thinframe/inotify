@@ -16,11 +16,11 @@
     "require": {
         "php": ">=5.4.0",
         "ext-inotify": "@stable",
-        "thinframe/foundation": "@stable",
-        "thinframe/events": "@stable",
-        "thinframe/applications": "@stable"
+        "thinframe/foundation": "dev-develop",
+        "thinframe/events": "dev-develop",
+        "thinframe/applications": "dev-develop"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "ThinFrame\\Inotify\\": "src/"
