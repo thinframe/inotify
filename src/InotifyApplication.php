@@ -51,7 +51,7 @@ class InotifyApplication extends AbstractApplication
      */
     protected function setConfiguration(ContainerConfigurator $configurator)
     {
-        $configurator->addResource('Resources/services/services.yml');
+        $configurator->addResource('Resources/config/services.yml');
     }
 
     /**
