@@ -1,8 +1,6 @@
 <?php
 
 /**
- * /src/InotifyEvent.php
- *
  * @author    Sorin Badea <sorin.badea91@gmail.com>
  * @license   MIT license (see the license file in the root directory)
  */
@@ -12,7 +10,7 @@ namespace ThinFrame\Inotify;
 use ThinFrame\Events\AbstractEvent;
 
 /**
- * Class InotifyEvent
+ * InotifyEvent
  *
  * @package ThinFrame\Inotify
  * @since   0.2

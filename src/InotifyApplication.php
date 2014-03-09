@@ -1,9 +1,7 @@
 <?php
 
 /**
- * /src/InotifyApplication.php
- *
- * @author Sorin Badea <sorin.badea91@gmail.com>
+ * @author    Sorin Badea <sorin.badea91@gmail.com>
  * @license   MIT license (see the license file in the root directory)
  */
 
@@ -15,7 +13,7 @@ use ThinFrame\Applications\DependencyInjection\ContainerConfigurator;
 use ThinFrame\Events\EventsApplication;
 
 /**
- * Class InotifyApplication
+ * InotifyApplication
  *
  * @package ThinFrame\Inotify
  * @since   0.2
@@ -65,4 +63,3 @@ class InotifyApplication extends AbstractApplication
         //noop
     }
 }
-

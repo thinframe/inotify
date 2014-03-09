@@ -1,9 +1,7 @@
 <?php
 
 /**
- * /src/FileSystemWatcher.php
- *
- * @author Sorin Badea <sorin.badea91@gmail.com>
+ * @author    Sorin Badea <sorin.badea91@gmail.com>
  * @license   MIT license (see the license file in the root directory)
  */
 
@@ -15,7 +13,7 @@ use ThinFrame\Foundation\Constant\DataType;
 use ThinFrame\Foundation\Helper\TypeCheck;
 
 /**
- * Class FileSystemWatcher
+ * FileSystemWatcher
  *
  * @package ThinFrame\Inotify
  * @since   0.2
@@ -90,15 +88,17 @@ class FileSystemWatcher implements DispatcherAwareInterface
         if (is_dir($path) && $recursive) {
             $children = scandir($path);
             foreach ($children as $child) {
-                if ($child != '.' && $child != '..' && $child != '.git' && is_dir(
-                        $path . DIRECTORY_SEPARATOR . $child
-                    )
+                if (
+                    $child != '.'
+                    && $child != '..'
+                    && $child != '.git'
+                    && is_dir($path . DIRECTORY_SEPARATOR . $child)
                 ) {
                     $this->addPath($path . DIRECTORY_SEPARATOR . $child, $mode, $recursive);
                 }
             }
         }
-        $watchDescriptor = inotify_add_watch($this->inotifyStreamDescriptor, $path, $mode);
+        $watchDescriptor                          = inotify_add_watch($this->inotifyStreamDescriptor, $path, $mode);
         $this->watchDescriptors[$watchDescriptor] = $path;
     }
 
@@ -115,7 +115,11 @@ class FileSystemWatcher implements DispatcherAwareInterface
     }
 
     /**
+     * Exclude path
+     *
      * @param string $path
+     *
+     * @return $this
      */
     public function exclude($path)
     {

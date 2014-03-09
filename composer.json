@@ -25,5 +25,11 @@
         "psr-4": {
             "ThinFrame\\Inotify\\": "src/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev",
+            "dev-develop": "0.3-dev"
+        }
     }
 }
