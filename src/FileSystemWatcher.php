@@ -7,8 +7,10 @@
 
 namespace ThinFrame\Inotify;
 
+use Symfony\Component\Finder\Finder;
 use ThinFrame\Events\Dispatcher;
 use ThinFrame\Events\DispatcherAwareInterface;
+use ThinFrame\Events\DispatcherAwareTrait;
 use ThinFrame\Foundation\Constant\DataType;
 use ThinFrame\Foundation\Helper\TypeCheck;
 
@@ -20,38 +22,92 @@ use ThinFrame\Foundation\Helper\TypeCheck;
  */
 class FileSystemWatcher implements DispatcherAwareInterface
 {
-    private $inotifyStreamDescriptor = null;
+    use DispatcherAwareTrait;
+
+    /**
+     * iNotify resource
+     *
+     * @var null|resource
+     */
+    private $resource = null;
     /**
      * @var array
      */
     private $watchDescriptors = [];
+
     /**
-     * @var array
+     * @var Finder
      */
-    private $excluded = [];
+    private $finder;
+
     /**
-     * @var Dispatcher
+     * Default iNotify mode
+     * @var int
      */
-    private $dispatcher;
+    private $defaultMode;
 
     /**
      * Constructor
+     *
+     * @param Finder $finder
      */
-    public function __construct()
+    public function __construct(Finder $finder)
     {
-        $this->inotifyStreamDescriptor = inotify_init();
-        stream_set_blocking($this->inotifyStreamDescriptor, 0);
+        $this->defaultMode = IN_MODIFY | IN_DELETE | IN_CREATE;
+
+        $this->finder = $finder;
+
+        $this->resource = inotify_init();
+        stream_set_blocking($this->resource, 0);
         register_tick_function([$this, 'tick']);
+
+        $this->finder
+            ->ignoreDotFiles(true)
+            ->ignoreUnreadableDirs(true)
+            ->ignoreVCS(true)
+            ->followLinks();
+
     }
+
+    /**
+     * Attach the dispatcher
+     *
+     * @param Dispatcher $dispatcher
+     */
+    public function setDispatcher(Dispatcher $dispatcher)
+    {
+        if ($this->dispatcher) {
+            return;
+        }
+        $this->dispatcher = $dispatcher;
+        $this->dispatcher->attachTo(InotifyEvent::EVENT_ID, [$this, 'handleDirectories']);
+    }
+
 
     /**
      * Tick handler
      */
     public function tick()
     {
-        $events = inotify_read($this->inotifyStreamDescriptor);
+        $events = inotify_read($this->resource);
         if (is_array($events)) {
             $this->handleEvents($events);
+        }
+    }
+
+    /**
+     * Check if changed item is a directory and add/remove it from file system watcher
+     *
+     * @param InotifyEvent $event
+     */
+    public function handleDirectories(InotifyEvent $event)
+    {
+        $path = $event->getPayload()->get('path')->get();
+        $data = $event->getPayload()->get('inotify')->get();
+
+        clearstatcache(true, $path . DIRECTORY_SEPARATOR . $data['name']);
+        if (is_dir($path . DIRECTORY_SEPARATOR . $data['name'])) {
+            $this->watchPath($path . DIRECTORY_SEPARATOR . $data['name'], $this->defaultMode);
         }
     }
 
@@ -63,7 +119,7 @@ class FileSystemWatcher implements DispatcherAwareInterface
     private function handleEvents(array $events)
     {
         foreach ($events as $event) {
-            $watchDescriptor = $event['wd'];
+            $watchDescriptor = intval($event['wd']);
             $this->dispatcher->trigger(
                 new InotifyEvent(['path' => $this->watchDescriptors[$watchDescriptor], 'inotify' => $event])
             );
@@ -71,71 +127,47 @@ class FileSystemWatcher implements DispatcherAwareInterface
     }
 
     /**
-     * Add a path to the watcher
+     * Watch a path
      *
      * @param string $path
      * @param int    $mode
      * @param bool   $recursive
      */
-    public function addPath($path, $mode = IN_MODIFY, $recursive = true)
+    public function watchPath($path, $mode = null, $recursive = true)
     {
         TypeCheck::doCheck(DataType::STRING, DataType::INT, DataType::BOOLEAN);
 
-        if ($this->isExcluded($path)) {
-            return;
+        if (is_null($mode)) {
+            $mode = $this->defaultMode;
         }
 
-        if (is_dir($path) && $recursive) {
-            $children = scandir($path);
-            foreach ($children as $child) {
-                if (
-                    $child != '.'
-                    && $child != '..'
-                    && $child != '.git'
-                    && is_dir($path . DIRECTORY_SEPARATOR . $child)
-                ) {
-                    $this->addPath($path . DIRECTORY_SEPARATOR . $child, $mode, $recursive);
-                }
-            }
+        $finder = clone $this->finder;
+
+        $finder->in($path);
+
+        foreach ($finder->directories() as $directory) {
+            $descriptor                          = inotify_add_watch(
+                $this->resource,
+                realpath($directory),
+                $mode
+            );
+            $this->watchDescriptors[$descriptor] = realpath($directory);
         }
-        $watchDescriptor                          = inotify_add_watch($this->inotifyStreamDescriptor, $path, $mode);
-        $this->watchDescriptors[$watchDescriptor] = $path;
+
+        echo realpath($path) . PHP_EOL;
+        $descriptor                          = inotify_add_watch($this->resource, realpath($path), $mode);
+        $this->watchDescriptors[$descriptor] = realpath($path);
+
+        unset($finder);
     }
 
     /**
-     * Check if path is excluded
-     *
-     * @param string $path
-     *
-     * @return bool
+     * Remove all watched paths
      */
-    private function isExcluded($path)
+    public function clear()
     {
-        return in_array(realpath($path), $this->excluded);
-    }
-
-    /**
-     * Exclude path
-     *
-     * @param string $path
-     *
-     * @return $this
-     */
-    public function exclude($path)
-    {
-        TypeCheck::doCheck(DataType::STRING);
-        if (realpath($path)) {
-            $this->excluded[] = realpath($path);
+        foreach ($this->watchDescriptors as $descriptor => $path) {
+            inotify_rm_watch($this->resource, $descriptor);
         }
-
-        return $this;
-    }
-
-    /**
-     * @param Dispatcher $dispatcher
-     */
-    public function setDispatcher(Dispatcher $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
     }
 }

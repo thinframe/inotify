@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "debbffd8e46a2852baed841ad0c362cf",
+    "hash": "42bb3f5ecc34b617e84f2f9f2eb7e639",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -60,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "a043c01f3c469e7d59dba31a1613168cc5797d70"
+                "reference": "4cf49e5496857532f4ca4bbb69d1eee591b88234"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a043c01f3c469e7d59dba31a1613168cc5797d70",
-                "reference": "a043c01f3c469e7d59dba31a1613168cc5797d70",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4cf49e5496857532f4ca4bbb69d1eee591b88234",
+                "reference": "4cf49e5496857532f4ca4bbb69d1eee591b88234",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -120,7 +120,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-03-09 17:07:55"
+            "time": "2014-03-26 11:12:35"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -380,12 +380,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "e81f1b30eb9748c3f8e0de3a92ea210845cff0a9"
+                "reference": "fe66eed49c7bbfc312978ef0f86e490127a345b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/e81f1b30eb9748c3f8e0de3a92ea210845cff0a9",
-                "reference": "e81f1b30eb9748c3f8e0de3a92ea210845cff0a9",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/fe66eed49c7bbfc312978ef0f86e490127a345b2",
+                "reference": "fe66eed49c7bbfc312978ef0f86e490127a345b2",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +420,56 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-01-07 13:29:57"
+            "time": "2014-03-26 12:01:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Finder",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "d45faef922df8438cce99b5ee226bf06c32d145e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/d45faef922df8438cce99b5ee226bf06c32d145e",
+                "reference": "d45faef922df8438cce99b5ee226bf06c32d145e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-03-03 12:53:01"
         },
         {
             "name": "symfony/yaml",
@@ -477,12 +526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinframe/applications.git",
-                "reference": "b2b7a2e9fdd5103f815d51dd3faba4ca7aea53cd"
+                "reference": "d18f05868c6fc2445b729d1688d0c595970a8345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinframe/applications/zipball/b2b7a2e9fdd5103f815d51dd3faba4ca7aea53cd",
-                "reference": "b2b7a2e9fdd5103f815d51dd3faba4ca7aea53cd",
+                "url": "https://api.github.com/repos/thinframe/applications/zipball/d18f05868c6fc2445b729d1688d0c595970a8345",
+                "reference": "d18f05868c6fc2445b729d1688d0c595970a8345",
                 "shasum": ""
             },
             "require": {
@@ -523,7 +572,7 @@
                 "ecosystem",
                 "thinframe"
             ],
-            "time": "2014-03-09 16:06:40"
+            "time": "2014-03-27 21:26:16"
         },
         {
             "name": "thinframe/events",
@@ -531,12 +580,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinframe/events.git",
-                "reference": "f4d9d7eb5e5fe89c0f7a846ba4cd001ba8b6980a"
+                "reference": "432054c7995bbfcf38eb42ada6c468c7018474cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinframe/events/zipball/f4d9d7eb5e5fe89c0f7a846ba4cd001ba8b6980a",
-                "reference": "f4d9d7eb5e5fe89c0f7a846ba4cd001ba8b6980a",
+                "url": "https://api.github.com/repos/thinframe/events/zipball/432054c7995bbfcf38eb42ada6c468c7018474cc",
+                "reference": "432054c7995bbfcf38eb42ada6c468c7018474cc",
                 "shasum": ""
             },
             "require": {
@@ -578,7 +627,7 @@
                 "events",
                 "thinframe"
             ],
-            "time": "2014-03-09 17:45:21"
+            "time": "2014-03-09 18:17:41"
         },
         {
             "name": "thinframe/foundation",
@@ -640,12 +689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinframe/monolog.git",
-                "reference": "cd6d6c85889bfd5994c609c478cf5056d8e9c8ed"
+                "reference": "65e6c009ebda52df8afb41ca078dee2411278c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinframe/monolog/zipball/cd6d6c85889bfd5994c609c478cf5056d8e9c8ed",
-                "reference": "cd6d6c85889bfd5994c609c478cf5056d8e9c8ed",
+                "url": "https://api.github.com/repos/thinframe/monolog/zipball/65e6c009ebda52df8afb41ca078dee2411278c52",
+                "reference": "65e6c009ebda52df8afb41ca078dee2411278c52",
                 "shasum": ""
             },
             "require": {
@@ -682,7 +731,7 @@
                 "monolog",
                 "thinframe"
             ],
-            "time": "2014-03-09 14:31:53"
+            "time": "2014-03-28 17:53:48"
         }
     ],
     "packages-dev": [

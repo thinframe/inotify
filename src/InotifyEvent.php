@@ -17,6 +17,8 @@ use ThinFrame\Events\AbstractEvent;
  */
 class InotifyEvent extends AbstractEvent
 {
+    const EVENT_ID = 'thinframe.inotify';
+
     /**
      * Constructor
      *
@@ -24,6 +26,6 @@ class InotifyEvent extends AbstractEvent
      */
     public function __construct(array $payload = [])
     {
-        parent::__construct('thinframe.inotify', $payload);
+        parent::__construct(self::EVENT_ID, $payload);
     }
 }

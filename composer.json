@@ -18,7 +18,8 @@
         "ext-inotify": "@stable",
         "thinframe/foundation": "dev-develop",
         "thinframe/events": "dev-develop",
-        "thinframe/applications": "dev-develop"
+        "thinframe/applications": "dev-develop",
+        "symfony/finder": "2.5.*"
     },
     "minimum-stability": "dev",
     "autoload": {
