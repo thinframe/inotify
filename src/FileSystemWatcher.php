@@ -153,8 +153,6 @@ class FileSystemWatcher implements DispatcherAwareInterface
             );
             $this->watchDescriptors[$descriptor] = realpath($directory);
         }
-
-        echo realpath($path) . PHP_EOL;
         $descriptor                          = inotify_add_watch($this->resource, realpath($path), $mode);
         $this->watchDescriptors[$descriptor] = realpath($path);
 
