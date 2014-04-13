@@ -1,7 +1,5 @@
 <?php
 /**
- * /src/ThinFrame/Inotify/ideSupport.php
- *
  * @link http://www.php.net/manual/en/book.inotify.php
  */
 

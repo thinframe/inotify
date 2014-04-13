@@ -7,7 +7,7 @@ Wrapper over pecl inotify library
 [![License](https://poser.pugx.org/thinframe/inotify/license.png)](https://packagist.org/packages/thinframe/inotify)
 
 ###Installation:
-* via Composer: `"thinframe/inotify":"@stable"`
+* via Composer: `"thinframe/inotify":"0.3.*"`
 
 ###Copyright
 * MIT License - Sorin Badea <sorin.badea91@gmail.com>

@@ -1,0 +1,10 @@
+parameters:
+    inotify.file_system_watcher.class: 'ThinFrame\Inotify\FileSystemWatcher'
+    inotify.finder.class: 'Symfony\Component\Finder\Finder'
+services:
+    inotify.file_system_watcher:
+        class: '%inotify.file_system_watcher.class%'
+        arguments: ['@inotify.finder']
+
+    inotify.finder:
+        class: '%inotify.finder.class%'

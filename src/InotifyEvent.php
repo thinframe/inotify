@@ -1,9 +1,7 @@
 <?php
 
 /**
- * /src/InotifyEvent.php
- *
- * @copyright 2013 Sorin Badea <sorin.badea91@gmail.com>
+ * @author    Sorin Badea <sorin.badea91@gmail.com>
  * @license   MIT license (see the license file in the root directory)
  */
 
@@ -12,13 +10,15 @@ namespace ThinFrame\Inotify;
 use ThinFrame\Events\AbstractEvent;
 
 /**
- * Class InotifyEvent
+ * InotifyEvent
  *
  * @package ThinFrame\Inotify
  * @since   0.2
  */
 class InotifyEvent extends AbstractEvent
 {
+    const EVENT_ID = 'thinframe.inotify';
+
     /**
      * Constructor
      *
@@ -26,6 +26,6 @@ class InotifyEvent extends AbstractEvent
      */
     public function __construct(array $payload = [])
     {
-        parent::__construct('thinframe.inotify', $payload);
+        parent::__construct(self::EVENT_ID, $payload);
     }
 }
